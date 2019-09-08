@@ -40,3 +40,24 @@ class Parabola{
 	
 	
 };
+
+class Circunferencia{
+	private:
+		float h;
+		float c;
+		float r;
+	public:
+		Circunferencia( float _h, float _c, float _r ){
+			h = _h;
+			c = _c;
+			r = _r;
+		}
+		
+		float getY1( float x ){
+			return ( c + sqrt( pow( r, 2 ) - pow ( ( x - h ), 2 )));
+		}
+		
+		float getY2( float x ){
+			return ( c - sqrt( pow( r, 2 ) - pow ( ( x - h ), 2 )));
+		}
+};

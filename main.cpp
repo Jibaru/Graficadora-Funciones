@@ -12,6 +12,7 @@ void menu_funciones( Plano );
 void menu_punto( Plano );
 void menu_recta( Plano );
 void menu_parabola( Plano );
+void menu_circunferencia ( Plano );
 
 main (){
 	
@@ -91,6 +92,7 @@ void menu_funciones( Plano plano ){
 		cout << " [1]. Punto " << endl;
 		cout << " [2]. Recta " << endl;
 		cout << " [3]. Parabola " << endl;
+		cout << " [4]. Circunferencia" << endl;
 		cout << " [0]. Volver " << endl;
 		cin >> eleccion;
 		
@@ -103,6 +105,9 @@ void menu_funciones( Plano plano ){
 				break;
 			case 3:
 				menu_parabola( plano );
+				break;
+			case 4:
+				menu_circunferencia( plano );
 				break;
 			default:
 				break;
@@ -178,4 +183,24 @@ void menu_parabola( Plano plano ){
 	system("pause>null");
 }
 
-
+void menu_circunferencia( Plano plano ){
+	float h, c, r;
+	int color;
+	
+	system("cls");
+	cout << "MENU CIRCUNFERENCIA" << endl;
+	cout << " (x-h)^2 + (y-c)^2 = r^2 " << endl;
+	cout << " h: ";
+	cin  >> h;
+	cout << " c: ";
+	cin  >> c;
+	cout << " r: ";
+	cin  >> r;
+	cout << " Color: ";
+	cin  >> color;
+	
+	plano.pintar_circunferencia( h, c, r, color );
+	
+	
+	system("pause>null");
+}
