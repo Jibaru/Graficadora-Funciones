@@ -61,3 +61,32 @@ class Circunferencia{
 			return ( c - sqrt( pow( r, 2 ) - pow ( ( x - h ), 2 )));
 		}
 };
+
+class Elipse{
+	private:
+		float h;
+		float c;
+		float a;
+		float b;
+	public:
+		Elipse( float _h, float _c, float _a, float _b ){
+			h = _h;
+			c = _c;
+			a = _a;
+			b = _b;
+		}
+		
+		float getY1( float x ){
+			return (c + sqrt( pow(b, 2) * ( 1 - (pow(x - h,2) / pow(a, 2)))));
+		}
+		
+		float getY2( float x ){
+			return (c - sqrt( pow(b, 2) * ( 1 - (pow(x - h,2) / pow(a, 2)))));
+		}
+};
+
+
+
+
+
+

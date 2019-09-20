@@ -170,6 +170,26 @@ class Plano{
 				putpixel(posX(p1.getX()), posY(p1.getY()), color);
 				putpixel(posX(p2.getX()), posY(p2.getY()), color);
 			}
+		}
+		
+		void pintar_elipse( float h, float c, float a, float b, int color = YELLOW ){
+			Punto p1 = Punto( 0.0f, 0.0f);
+			Punto p2 = Punto( 0.0f, 0.0f);
+			
+			Elipse elip = Elipse(h, c, a, b);
+			
+			float longitud = (float) ancho/(2*k);
+			
+			for( float i = -longitud; i <= longitud; i+=0.01){
+				p1.setX(i);
+				p1.setY(elip.getY1(i));
+				
+				p2.setX(i);
+				p2.setY(elip.getY2(i));
+				
+				putpixel(posX(p1.getX()), posY(p1.getY()), color);
+				putpixel(posX(p2.getX()), posY(p2.getY()), color);
+			}
 			
 		}
 };

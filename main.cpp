@@ -13,6 +13,7 @@ void menu_punto( Plano );
 void menu_recta( Plano );
 void menu_parabola( Plano );
 void menu_circunferencia ( Plano );
+void menu_elipse( Plano );
 
 main (){
 	
@@ -93,6 +94,7 @@ void menu_funciones( Plano plano ){
 		cout << " [2]. Recta " << endl;
 		cout << " [3]. Parabola " << endl;
 		cout << " [4]. Circunferencia" << endl;
+		cout << " [5]. Elipse " << endl;
 		cout << " [0]. Volver " << endl;
 		cin >> eleccion;
 		
@@ -108,6 +110,9 @@ void menu_funciones( Plano plano ){
 				break;
 			case 4:
 				menu_circunferencia( plano );
+				break;
+			case 5:
+				menu_elipse( plano );
 				break;
 			default:
 				break;
@@ -201,6 +206,34 @@ void menu_circunferencia( Plano plano ){
 	
 	plano.pintar_circunferencia( h, c, r, color );
 	
+	
+	system("pause>null");
+}
+
+void menu_elipse( Plano plano ){
+	float h,c,a,b;
+	int color;
+	
+	system("cls");
+	cout << "MENU ELIPSE" << endl;
+	cout << " ((x-h)^2)/a + ((y-c)^2)/b = 1 " << endl;
+	cout << " h: ";
+	cin  >> h;
+	cout << " c: ";
+	cin  >> c;
+	cout << " a: ";
+	cin  >> a;
+	do{
+		cout << " b: ";
+		cin  >> b;
+		if ( b == a ){
+			cout << " El valor de b debe ser diferente de a. " << endl;
+		}
+	}while( b == a );
+	cout << " Color: ";
+	cin  >> color;
+	
+	plano.pintar_elipse( h, c, a, b, color );
 	
 	system("pause>null");
 }
